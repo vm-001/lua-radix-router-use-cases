@@ -7,6 +7,7 @@ local kong = kong
 
 local traditional = require("kong.router.traditional")
 local expressions = require("kong.router.expressions")
+local radix       = require("kong.router.radix")
 local compat      = require("kong.router.compat")
 local utils       = require("kong.router.utils")
 
@@ -38,6 +39,8 @@ function _M.new(routes, cache, cache_neg, old_router)
     kong.configuration and
     kong.configuration.router_flavor
 
+  kong.log.warn("==>>> flavor: ", flavor)
+
   phonehome_statistics(routes)
 
   if not flavor or flavor == "traditional" then
@@ -54,6 +57,10 @@ function _M.new(routes, cache, cache_neg, old_router)
 
   if flavor == "expressions" then
     return expressions.new(routes, cache, cache_neg, old_router)
+  end
+
+  if flavor == "radix" then
+    return radix.new(routes, cache, cache_neg, old_router)
   end
 
   -- flavor == "traditional_compatible"

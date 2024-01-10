@@ -465,7 +465,7 @@ local CONF_PARSERS = {
     }
   },
   router_flavor = {
-    enum = { "traditional", "traditional_compatible", "expressions" },
+    enum = { "traditional", "traditional_compatible", "expressions", "radix" },
   },
   worker_state_update_frequency = { typ = "number" },
 
