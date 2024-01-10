@@ -1,0 +1,19 @@
+_format_version: "3.0"
+
+services:
+  - name: example-service
+    host: httpbin.org
+    port: 80
+    path: /anything
+    protocol: http
+    routes:
+      - name: example-route
+        paths:
+          - /
+    plugins:
+      - name: sensitive-api
+        config:
+          apis:
+            "/api/login": { methods: [ "POST" ] }
+            "/api/users/{id}/update_email": { methods: [ "POST" ] }
+            "/api/users/{id}/settings/{*path}": { methods: [ "POST", "PUT" ] }
