@@ -2,7 +2,7 @@
 
 > Lua-Radix-Router is a lightweight high-performance router library written in pure Lua.
 
-The use cases of [lua-radix-router](https://github.com/vm-001/).
+The use cases of [lua-radix-router](https://github.com/vm-001/lua-radix-router).
 
 
 ## Kong Gateway Plugins
