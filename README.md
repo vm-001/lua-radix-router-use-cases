@@ -1,6 +1,6 @@
 # Lua-Radix-Router use cases
 
-The use cases of https://github.com/vm-001/lua-radix-router.
+The use cases of [lua-radix-router](https://github.com/vm-001/).
 
 
 ## Kong Gateway Plugins
